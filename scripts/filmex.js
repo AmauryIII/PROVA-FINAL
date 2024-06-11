@@ -48,30 +48,30 @@ $(document).ready(function() {
   
     // Modal de seleção de assentos
     $('#filmes .card a, #filmes2 .card a').click(function(event) {
-        event.preventDefault(); // Previne a ação padrão do link
-        $('#modalSelecaoAssentos').modal('show'); // Abre o modal
+        event.preventDefault(); 
+        $('#modalSelecaoAssentos').modal('show'); 
     });
   
-    // Função para gerar poltronas
+    
     function gerarPoltronas() {
         const assentosCinema = $('#assentosCinema');
-        assentosCinema.empty(); // Limpa os assentos existentes
-        let total = 0; // Inicializa o total
+        assentosCinema.empty(); 
+        let total = 0; 
   
-        for (let i = 0; i < 3; i++) { // 3 fileiras
+        for (let i = 0; i < 3; i++) { 
             const fileira = $('<div>').addClass('d-flex justify-content-center mb-2');
-            for (let j = 0; j < 6; j++) { // 6 poltronas por fileira
+            for (let j = 0; j < 6; j++) { 
                 const poltrona = $('<button>').addClass('btn border me-1 poltrona');
                 poltrona.html(`<i class="fa-solid fa-couch fa-xl"></i><span class="poltrona-numero">${i * 6 + j + 1}</span>`);
                 poltrona.on('click', function() {
-                    $(this).toggleClass('btn-success'); // Muda a cor para verde
-                    const valorPoltrona = 29.90;
+                    $(this).toggleClass('btn-success'); 
+                    const valorPoltrona = 25.00;
                     if ($(this).hasClass('btn-success')) {
-                        total += valorPoltrona; // Adiciona o valor ao total
+                        total += valorPoltrona; 
                     } else {
-                        total -= valorPoltrona; // Subtrai o valor do total
+                        total -= valorPoltrona; 
                     }
-                    $('#total').text(`Total: R$${total.toFixed(2)}`); // Atualiza o total
+                    $('#total').text(`Total: R$${total.toFixed(2)}`); 
                 });
                 fileira.append(poltrona);
             }
@@ -79,25 +79,25 @@ $(document).ready(function() {
         }
     }
   
-    // Inicializa o modal com as poltronas
+    
     $('#modalSelecaoAssentos').on('show.bs.modal', function() {
-        gerarPoltronas(); // Gera as poltronas
+        gerarPoltronas(); 
     });
   
-    // Limpa o total ao fechar o modal
+    
     $('#modalSelecaoAssentos').on('hidden.bs.modal', function() {
         $('#total').text('Total: R$0.00');
     });
   
-    // Quando o usuário confirma a seleção de assentos
+    
     $('#confirmarSelecao').click(function() {
-        // Armazena as poltronas selecionadas no localStorage
+        
         var poltronasSelecionadas = [];
         $('.poltrona.btn-success').each(function() {
             poltronasSelecionadas.push($(this).find('.poltrona-numero').text());
         });
         localStorage.setItem('poltronasSelecionadas', JSON.stringify(poltronasSelecionadas));
-        // Redireciona para a página do carrinho
+        
         window.location.href = 'carrinho.html';
     });
 });

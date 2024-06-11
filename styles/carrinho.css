@@ -28,8 +28,8 @@ h4 {
 }
 
 .light-theme {
-  background-color: #FFFFFF; /* Branco Completo */
-  color: #2C2F33; /* Cinza Escuro */
+  background-color: #FFFFFF; 
+  color: #2C2F33; 
 }
 
 /* Estilos para o cabeçalho */
@@ -86,9 +86,8 @@ header {
   }
 }
 
-/* Estilos para formulários e inputs */
+
 input[type="text"],
-input[type="email"],
 input[type="password"],
 button,
 select {

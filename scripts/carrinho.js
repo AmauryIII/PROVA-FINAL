@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
         if(selectedPaymentMethod) {
             // Aqui você pode adicionar a lógica para processar o pagamento
-            alert('Compra finalizada com ' + selectedPaymentMethod.id + '. Obrigado por comprar conosco!');
+            alert('Compra finalizada com ' + selectedPaymentMethod.id + '. Obrigado pela preferência!');
         } else {
             alert('Por favor, selecione um método de pagamento.');
         }
@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     applyCouponButton.addEventListener('click', function() {
         var cupomCode = couponInput.value;
-        if(cupomCode === 'DESCONTO10') {
-            alert('Cupom de 10% aplicado com sucesso!');
-            // Aqui você pode adicionar a lógica para aplicar o desconto
+        if(cupomCode === 'CINE20') {
+            alert('Cupom de 20% de desconto!');
+           
         } else {
-            alert('Cupom inválido. Tente novamente.');
+            alert('Cupom inválido/ ou esgotado :(');
         }
     });
 });

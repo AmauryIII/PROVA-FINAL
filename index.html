@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CINE PLUS - A CASA DOS FILMES.">
+  <meta name="keywords" content="filmes, séries, entretenimento, streaming">
+  <link rel="shortcut icon" href="./Img/icons8-óculos-3d-96 (1).png" type="image/x-icon">
+  <title>CINE PLUS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body class="dark-theme">
+  <header>
+    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid p-3">
+        <a class="navbar-brand ms-3" href="#"><img src="Img/CINE PLUS (1).png" alt="LOGO" style="height: 150px;"></a>
+        <div class="d-none d-lg-block">
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2 border border-top-0 border-start-0 border-end-0" type="search" placeholder="Procurar" aria-label="Search">
+            <button class="border border-0 btn" type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+          </form>
+        </div>
+        <div class="d-flex gap-5">
+          <button id="themeToggle" class="border border-0 btn">
+            <i class="fa-solid fa-moon fa-xl"></i> 
+            <i class="fa-solid fa-sun fa-xl"></i> 
+          </button>
+          <span class="border-end"></span>
+          <button class="navbar-toggler p-3 border border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span><i class="fa-solid fa-bars fa-xl"></i></span>
+          </button>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: rgb(243, 243, 243);">CINE PLUS</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="d-flex flex-column align-items-center mb-3">
+              <a href="#" class="btn btn-lg mb-2 p-3" role="button"><i class="fa-regular fa-circle-user fa-2xl me-2"></i>Logar/Cadastrar</a>
+            </div>
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house me-2"></i>Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa-solid fa-ticket me-2"></i>Ingressos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping me-2"></i>Carrinho</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-list me-2"></i> Categorias
+                </a>
+                <ol class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Ação</a></li>
+                  <li><a class="dropdown-item" href="#">Romance</a></li>
+                  <li><a class="dropdown-item" href="#">Comédia</a></li>
+                  <li><a class="dropdown-item" href="#">Drama</a></li>
+                  <li><a class="dropdown-item" href="#">Terror</a></li>
+                  <li><a class="dropdown-item" href="#">Suspense</a></li>
+                  <li><a class="dropdown-item" href="#">Ficção Científica</a></li>
+                  <li><a class="dropdown-item" href="#">Fantasia</a></li>
+                  <li><a class="dropdown-item" href="#">Documentário</a></li>
+                  <li><a class="dropdown-item" href="#">Animação</a></li>
+                  <li><a class="dropdown-item" href="#">Aventura</a></li>
+                  <li><a class="dropdown-item" href="#">Crime</a></li>
+                  <li><a class="dropdown-item" href="#">Musical</a></li>
+                  <li><a class="dropdown-item" href="#">Guerra</a></li>
+                  <li><a class="dropdown-item" href="#">Histórico</a></li>
+                  <li><a class="dropdown-item" href="#">Biografia</a></li>
+                  <li><a class="dropdown-item" href="#">Esporte</a></li>
+                  <li><a class="dropdown-item" href="#">Mistério</a></li>
+                  <li><a class="dropdown-item" href="#">Família</a></li>
+                  <li><a class="dropdown-item" href="#">Western</a></li>
+                  <li><a class="dropdown-item" href="#">Noir</a></li>
+                  <li><a class="dropdown-item" href="#">Policial</a></li>
+                  <li><a class="dropdown-item" href="#">Artes Marciais</a></li>
+                  <li><a class="dropdown-item" href="#">Cult</a></li>
+                </ol>
+              </li>
+            </ul>
+            <div class="d-block d-lg-none">
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2 border border-top-0 border-start-0 border-end-0" type="search" placeholder="Procurar" aria-label="Search">
+                <button class="border border-0 btn" type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Carrossel de Filmes em lançamento -->
+    <section id="filmesLancamento">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores do carrossel -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Conteúdo do carrossel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <picture>
+              <source srcset="./Img/Reino dos macacos.png" media="(min-width: 992px)"> 
+              <img src="./Img/Reino dos macacos.png" class="d-block w-100" alt="Planeta dos Macacos"> 
+            </picture>
+            <div class="carousel-caption border-0 d-none d-xl-block rounded">
+              <strong>
+                <h5 class="mt-3">Planeta dos Macacos: O Reinado</h5>
+              </strong>
+              <p class="m-3">Planeta dos Macacos: O Reinado dá continuidade à saga dos primatas inteligentes, situando-se em um futuro distante após os eventos de Guerra pelo Planeta dos Macacos de 2017. Com muitas sociedades de macacos surgindo desde a liderança de Caesar (Kevin Durand), a divisão entre eles é evidente: alguns desconhecem completamente os feitos do líder, enquanto outros distorcem seus ensinamentos para construir impérios poderosos.</p>
+              <div class="container">
+                <a href="#" class="btn btn-outline-dark text-white">Ver Trailer</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="carousel-item">
+            <picture>
+              <source srcset="./Img/furiosa+banner+2.png" media="(min-width: 992px)"> 
+              <img src="./Img/furiosa+banner+2.png" class="d-block w-100" alt="Furiosa"> 
+            </picture>
+            <div class="carousel-caption border-0 d-none d-xl-block rounded">
+              <strong>
+                <h5 class="mt-3">Furiosa: Uma Saga Mad Max</h5>
+              </strong>
+              <p class="m-3">Furiosa: Uma Saga Mad Max é um filme de ficção científica pós-apocalíptico dirigido por George Miller e estrelado por Anya Taylor-Joy, Chris Hemsworth e Tom Burke. A trama revela a história de origem da guerreira renegada Furiosa, anteriormente interpretada por Charlize Theron, narrando sua jornada até se unir a Max em Mad Max: Estrada da Fúria (2015).</p>
+              <div class="container">
+                <a href="#" class="btn btn-outline-dark text-white">Ver Trailer</a>
+              </div>
+            </div>
+          </div>
+         
+          <div class="carousel-item">
+            <picture>
+              <source srcset="./Img/kung_fu_panda.png" media="(min-width: 992px)">
+              <img src="./Img/kung_fu_panda.png" class="d-block w-100" alt="Kung Fu Panda"> 
+            </picture>
+            <div class="carousel-caption border-0 d-none d-xl-block rounded">
+              <strong>
+                <h5 class="mt-3">Garfield - Fora de casa</h5>
+              </strong>
+              <p class="m-3">“Garfield - Fora de Casa” é uma animação onde o famoso gato Garfield vive aventuras e descobre a importância de amigos e família. Com humor e apetite, ele encara desafios em uma trama envolvente.</p>
+              <div class="container">
+                <a href="#" class="btn btn-outline-dark text-white">Ver Trailer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <h2 class="text-center mt-5 font-weight-bold ">FILMES EM CARTAZ</h2>
+    <div class="border-bottom"></div>
+    <!-- Filmes -->
+    <section id="filmes" class="container mt-5 w-100">
+      <div class="row">
+        <div class="col-md-4 mt-3">
+          <div class="card rounded">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7AkiDy6DVlfhJusglf6tvifX6dB.jpg" class="card-img-top img-fluid" alt="O Dublê">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3">
+          <div class="card">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fGamTFPbJAAUnC2fbJbApTgi9EE.jpg" class="card-img-top img-fluid" alt="o tarô da morte">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3">
+          <div class="card">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ntRU0OA4etGGiMMmH1Yw0bnaMdW.jpg" class="card-img-top img-fluid" alt="Haikyu!!">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="filmes2" class="container mt-5">
+      <div class="row">
+        <div class="col-md-4 mt-3">
+          <div class="card">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tsV19P8J4NMP54cC8QCg1IkLLks.jpg" class="card-img-top img-fluid" alt="Imaculada">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3">
+          <div class="card">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jFpsKOCppRvwP0Igwp0F0Xu1RBJ.jpg" class="card-img-top img-fluid" alt="Observadores">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3">
+          <div class="card border">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/voLxg0emuu862JAgFwM4yTH3eGj.jpg" class="card-img-top img-fluid" alt="The Shift">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="border-top mt-3"></div>
+
+    <section id="filmes2" class="container mt-5">
+      <div class="row">
+        <div class="col-md-4 mt-3">
+          <div class="card">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6MHnkm1nQpq40ZvCcdSUpvux2wU.jpg" class="card-img-top img-fluid" alt="Poolman">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3">
+          <div class="card">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/q3aYbKPczQrae0N142XHYXbWbT5.jpg" class="card-img-top img-fluid" alt="Assassino por Acaso">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3">
+          <div class="card border">
+            <a>
+              <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ak6VZDHms5T4p0eFISk336kqjR6.jpg" class="card-img-top img-fluid" alt="Bad Boys: Até o Fim ">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="border-top mt-3"></div>
+
+    
+  </main>
+
+  <footer class="d-flex f-d flex-column align-items-center justify-content-center mt-3">
+    <h3>CINE PLUS DF</h3>
+    <h5>As melhores histórias são contadas aqui!</h5>
+</footer>
+
+  <!-- Modal para seleção de assentos -->
+  <div id="modalSelecaoAssentos" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="assentosCinema" class="d-flex flex-column align-items-center">
+          
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div id="total" class="text-center">Total: R$0.00</div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        
+          <button type="button" id="confirmarSelecao" class="btn btn-primary">Confirmar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/13033c9605.js" crossorigin="anonymous"></script>
+  <script src="scripts/Jquery.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/carrinho.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
