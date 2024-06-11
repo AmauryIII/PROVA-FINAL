@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EYZE PLAY - Sua plataforma de entretenimento favorita.">
+    <meta name="keywords" content="filmes, séries, entretenimento, streaming">
+    <link rel="shortcut icon" href="./Img/icons8-óculos-3d-96 (1).png" type="image/x-icon">
+    <title>EYZE PLAY</title>
+    <!-- Bootstrap CSS e Estilos personalizados -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+          <link rel="stylesheet" href="styles/filmes.css">
+</head>
+
+<body class="dark-theme">
+      <header>
+            <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+              <div class="container-fluid p-3">
+                <a class="navbar-brand ms-3" href="index.html"><img src="./Img/CINE PLUS (1).png" alt="LOGO" style="height: 150px;"></a>
+                <div class="d-none d-lg-block">
+                  <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2 border border-top-0 border-start-0 border-end-0" type="search" placeholder="Procurar" aria-label="Search">
+                    <button class="border border-0 btn" type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+                  </form> 
+                </div>    
+                <div class="d-flex gap-5">                  
+                  <button id="themeToggle" class="border border-0 btn">
+                    <i class="fa-solid fa-moon fa-xl"></i> <!-- Ícone da lua -->
+                    <i class="fa-solid fa-sun fa-xl"></i> <!-- Ícone do sol -->
+                  </button>
+                  <span class="border-end"></span>
+                  <button class="navbar-toggler p-3 border border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span><i class="fa-solid fa-bars fa-xl"></i></span>
+                  </button>
+                </div>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: rgb(201, 206, 201);">CINE PLUS</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div class="d-flex flex-column align-items-center mb-3">
+                    <a href="#" class="btn btn-lg mb-2 p-3" role="button"><i class="fa-regular fa-circle-user fa-2xl me-2"></i>Logar/Cadastrar</a>
+                  </div>    
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house me-2"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="filmes.html"><i class="fa-solid fa-ticket me-2"></i>Filmes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="carrinho.html"><i class="fa-solid fa-cart-shopping me-2"></i>Carrinho</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-list me-2"></i> Categorias
+                      </a>
+                      <ol class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Ação</a></li>
+                        <li><a class="dropdown-item" href="#">Romance</a></li>
+                        <li><a class="dropdown-item" href="#">Comédia</a></li>
+                        <li><a class="dropdown-item" href="#">Drama</a></li>
+                        <li><a class="dropdown-item" href="#">Terror</a></li>
+                        <li><a class="dropdown-item" href="#">Suspense</a></li>
+                        <li><a class="dropdown-item" href="#">Ficção Científica</a></li>
+                        <li><a class="dropdown-item" href="#">Fantasia</a></li>
+                        <li><a class="dropdown-item" href="#">Documentário</a></li>
+                        <li><a class="dropdown-item" href="#">Animação</a></li>
+                        <li><a class="dropdown-item" href="#">Aventura</a></li>
+                        <li><a class="dropdown-item" href="#">Crime</a></li>
+                        <li><a class="dropdown-item" href="#">Musical</a></li>
+                        <li><a class="dropdown-item" href="#">Guerra</a></li>
+                        <li><a class="dropdown-item" href="#">Histórico</a></li>
+                        <li><a class="dropdown-item" href="#">Biografia</a></li>
+                        <li><a class="dropdown-item" href="#">Esporte</a></li>
+                        <li><a class="dropdown-item" href="#">Mistério</a></li>
+                        <li><a class="dropdown-item" href="#">Família</a></li>
+                        <li><a class="dropdown-item" href="#">Western</a></li>
+                        <li><a class="dropdown-item" href="#">Noir</a></li>
+                        <li><a class="dropdown-item" href="#">Policial</a></li>
+                        <li><a class="dropdown-item" href="#">Artes Marciais</a></li>
+                        <li><a class="dropdown-item" href="#">Cult</a></li>
+                    </ol>                    
+                    </li>
+                  </ul>
+                  <div class="d-block d-lg-none">
+                    <form class="d-flex mt-3" role="search">
+                      <input class="form-control me-2 border border-top-0 border-start-0 border-end-0" type="search" placeholder="Procurar" aria-label="Search">
+                      <button class="border border-0 btn" type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <main>
+        <h2 class="text-center mt-5">EM CARTAZ</h2>
+        <div class="border-bottom"></div>
+      
+<section id="filmes" class="container mt-5 w-100">
+    <div class="row">
+      
+      <div class="col-md-4 mt-3">
+        <div class="card">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7AkiDy6DVlfhJusglf6tvifX6dB.jpg" class="card-img-top img-fluid" alt="O Dublê">
+          <div class="card-body">
+            <h5 class="card-title">O Dublê</h5>
+            <div class="filme-horarios">
+              <p class="card-text">Segunda a Sexta:</p>
+              <ul>
+                <li><a href="#oduble-14">13:30 - Dublado</a></li>
+                <li><a href="#oduble-16">16:45 - Legendado</a></li>
+                <li><a href="#oduble-19">20:00 - Dublado</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mt-3">
+        <div class="card">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fGamTFPbJAAUnC2fbJbApTgi9EE.jpg" class="card-img-top img-fluid" alt="o tarô da morte">
+          <div class="card-body">
+            <h5 class="card-title">O Tarô da Morte</h5>
+            <div class="filme-horarios">
+              <p class="card-text">Segunda a Sexta:</p>
+              <ul>
+                <li><a href="#taro-15">14:00 - Dublado</a></li>
+                <li><a href="#taro-17">18:25 - Legendado</a></li>
+                <li><a href="#taro-20">21:30 - Dublado</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-4 mt-3">
+        <div class="card">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tsV19P8J4NMP54cC8QCg1IkLLks.jpg" class="card-img-top img-fluid" alt="Imaculada">
+          <div class="card-body">
+            <h5 class="card-title">Imaculada</h5>
+            <div class="filme-horarios">
+              <p class="card-text">Segunda a Sexta:</p>
+              <ul>
+                <li><a href="#imaculada-13">15:30 - Dublado</a></li>
+                <li><a href="#imaculada-18">18:00 - Dublado</a></li>
+                <li><a href="#imaculada-21">21:30 - Legendado</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+ 
+  <section id="filmes2" class="container mt-5">
+    <div class="row">
+     
+      <div class="col-md-4 mt-3">
+        <div class="card">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/j4KUED5qQCpmyz1Mr77coJCrndq.jpg" class="card-img-top img-fluid" alt="Furiosa: Uma Saga Mad Max">
+          <div class="card-body">
+            <h5 class="card-title">Furiosa: Mad Max</h5>
+            <div class="filme-horarios">
+              <p class="card-text">Segunda a Sexta:</p>
+              <ul>
+                <li><a href="#furiosa-14">15:00 - Legendado</a></li>
+                <li><a href="#furiosa-16">17:45 - Dublado</a></li>
+                <li><a href="#furiosa-19">21:00 - Dublado</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-md-4 mt-3">
+        <div class="card">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ZmKvpPlJTh0ItvyP0ADvPiTdnz.jpg" class="card-img-top img-fluid" alt="A Teia">
+          <div class="card-body">
+            <h5 class="card-title">A Teia</h5>
+            <div class="filme-horarios">
+              <p class="card-text">Segunda a Sexta:</p>
+              <ul>
+                <li><a href="#teia-15">13:30 - Dublado</a></li>
+                <li><a href="#teia-18">18:00 - Dublado</a></li>
+                <li><a href="#teia-21">22:00 - Legendado</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      <div class="col-md-4 mt-3">
+        <div class="card">
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ntRU0OA4etGGiMMmH1Yw0bnaMdW.jpg" class="card-img-top img-fluid" alt="Haikyu!!">
+          <div class="card-body">
+            <h5 class="card-title">Haikyu!!</h5>
+            <div class="filme-horarios">
+              <p class="card-text">Segunda a Sexta:</p>
+              <ul>
+                <li><a href="#haikyu-13">14:30 - Dublado</a></li>
+                <li><a href="#haikyu-18">18:00 - Legendado</a></li>
+                <li><a href="#haikyu-22">21:00 - Dublado</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+        <div class="border-top mt-3"></div>
+      </main>
+      
+      <footer class="d-flex f-d flex-column align-items-center justify-content-center mt-3">
+        <h3>CINE PLUS DF</h3>
+        <h5>As melhores histórias são contadas aqui!</h5>
+    </footer>
+  
+      <div id="modalSelecaoAssentos" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="assentosCinema" class="d-flex flex-column align-items-center">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div id="total" class="text-center">Total: R$0.00</div>
+              <button type="button" id="confirmarSelecao" class="btn btn-primary">Confirmar Pedido</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+      <!-- Scripts -->
+      <script src="https://kit.fontawesome.com/13033c9605.js" crossorigin="anonymous"></script>
+      <script src="scripts/Jquery.js"></script>
+      <script src="scripts/filmex.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+              integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+              crossorigin="anonymous"></script>
+  </body>
+  </html>
